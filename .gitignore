@@ -1,0 +1,15 @@
+/node_modules/
+/dist/
+/.sites-runtime/
+/.wrangler/
+/.codex/
+/.agents/
+.env*
+.dev.vars*
+*.pem
+*.log
+.DS_Store
+*.tsbuildinfo
+/.next/
+/.vinext/
+/next-env.d.ts

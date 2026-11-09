@@ -1,0 +1,13 @@
+{
+  "name": "final-expense-for-you",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "A responsive final expense insurance pay-per-call microsite.",
+  "scripts": {
+    "build": "node scripts/build-static.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
