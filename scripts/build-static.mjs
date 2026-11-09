@@ -58,6 +58,9 @@ for (const page of pages) {
     origin ? '<meta property="og:image" content="' + escape(origin) + '/assets/family-hero.webp">' : '',
     '<link rel="icon" href="/favicon.svg" type="image/svg+xml">',
     '<link rel="stylesheet" href="/assets/styles.css">',
+    '<!-- Meta Pixel Code -->',
+    '<script src="/assets/meta-pixel.js"></script>',
+    '<!-- End Meta Pixel Code -->',
   ].filter(Boolean).join('\n');
   const html = render(await readFile(path.join(source, page.file), 'utf8'), { HEAD: head, HEADER: header, FOOTER: footer });
   if (/\{\{[A-Z_]+\}\}/.test(html)) throw new Error('Unrendered placeholder in ' + page.file);

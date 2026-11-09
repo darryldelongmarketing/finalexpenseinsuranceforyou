@@ -20,6 +20,7 @@ The complete deployable site is written to dist/. No package dependencies or API
 - site/partials/header.html and footer.html — shared navigation, calls, and disclosures.
 - site/assets/styles.css — responsive styling.
 - site/assets/site.js — optional video controls.
+- site/assets/meta-pixel.js — shared Meta Pixel initialization and PageView event.
 - scripts/build-static.mjs — dependency-free template assembly and asset copying.
 
 Rebuild after editing. Double-brace template values are filled from site.config.mjs.
@@ -38,13 +39,15 @@ The .openai/hosting.json file retains the existing ChatGPT Sites preview identit
 
 Every call link opens tel:+18333071006. The website does not place a call automatically. Routing, availability, qualification, and payouts are handled by the owner's telephone/pay-per-call provider.
 
-Call buttons have data-call-location attributes for future analytics. No Google Ads conversion tag, analytics, advertising pixel, dynamic number insertion, or call-click measurement is installed. A click does not establish a connected or qualified call.
+Meta Pixel **2151654019078665** is installed on every generated page: home, privacy policy, and 404. The shared head loads a local bootstrap that initializes the pixel and queues one PageView event per page load. The shared body header contains the matching noscript image fallback. The supplied Meta bootstrap is served locally so the content security policy can continue to disallow inline scripts; the policy permits Meta's script and event endpoints.
+
+Call buttons have data-call-location attributes for future analytics. No call-click, Lead, or qualified-call event is configured in the website code. No Google Ads conversion tag or dynamic number insertion is installed. A page view or click does not establish a connected or qualified call.
 
 ## Video and privacy
 
 The requested YouTube iframe loads after Play, using youtube-nocookie.com. Close removes the player and returns keyboard focus to Play. A Watch on YouTube link remains available. No YouTube thumbnail or external font is loaded on initial page view.
 
-The privacy policy describes the current implementation, hosting request information, telephone inquiries, and YouTube. The legal business identity and dedicated website privacy contact were not supplied. Add those verified details before using the policy for a public advertising campaign, and revise the policy if tracking or data collection is added. The insurance inquiry number is not designated as a dedicated privacy-request line.
+The privacy policy describes the current implementation, hosting request information, Meta Pixel, telephone inquiries, and YouTube. Meta Pixel loads on page visits; YouTube still loads only after Play. The legal business identity and dedicated website privacy contact were not supplied. Add those verified details before using the policy for a public advertising campaign, and revise the policy if tracking or data collection changes. The insurance inquiry number is not designated as a dedicated privacy-request line.
 
 See CONTENT-NOTES.md for sources and verification.
 
